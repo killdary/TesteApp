@@ -29,14 +29,16 @@ namespace Telzir.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                TempData["codeError"] = 404;
+                return RedirectToAction("Index", "Planos");
             }
 
             var plano = await _context.Plano
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (plano == null)
             {
-                return NotFound();
+                TempData["codeError"] = 404;
+                return RedirectToAction("Index", "Planos");
             }
 
             return View(plano);
@@ -148,5 +150,10 @@ namespace Telzir.Controllers
         {
             return _context.Plano.Any(e => e.Id == id);
         }
+
+        // public async Task<IActionResult> ExibePlano(int? id){
+
+        //     return null;
+        // }
     }
 }

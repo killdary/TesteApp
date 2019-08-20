@@ -4,6 +4,15 @@
     ViewData["Title"] = "Planos";
 }
 
+@if(TempData.ContainsKey("codeError"))
+{
+    @if(Convert.ToInt32(TempData["codeError"]) == 404){
+        <div class="alert alert-danger" role="alert">
+            O plano buscado não existe
+        </div>
+    }
+}
+
 <h1>Planos</h1>
 
 <p>
