@@ -1,0 +1,36 @@
+@model Telzir.Models.Tarifa
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Tarifa</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DdOrigem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DdOrigem)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DdDestino)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DdDestino)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
